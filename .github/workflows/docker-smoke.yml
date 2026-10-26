@@ -29,7 +29,7 @@ permissions:
 jobs:
   smoke:
     name: Compose smoke test (read-only)
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -124,7 +124,7 @@ jobs:
 
   install-script:
     name: install.sh end-to-end
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
     # Exercises the published one-liner path — docker/install.sh pulled
     # from HTTP — against the branch-under-test. The default source
